@@ -282,6 +282,30 @@ SELECT brands.name, brands.founded FROM brands LEFT JOIN models ON models.brand_
 
 
 ==========
+13
+
+-----
+
+Select the brand id of any brand with more than 5 models in the
+database using a HAVING clause.
+
+The correct result set is:
+
+ brand_id
+----------
+ che
+ pon
+ for
+(3 rows)
+
+
+-----
+
+
+SELECT brands.brand_id FROM brands JOIN models USING (brand_id) GROUP BY brand_id HAVING COUNT(*) > 5;
+
+
+==========
 14
 
 -----
