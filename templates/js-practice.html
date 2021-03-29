@@ -146,7 +146,7 @@
   function alerted(event) {
     alert("Okay, I've popped up!");
   }
-  
+
   $('.find-me').on('click', alerted);
 </script>
 
@@ -178,6 +178,11 @@
 <script>
   "use strict";
   // put your code here
+
+  $('#make-a-porcupine').on('click', (event) => {
+    $('#cute-porcupine-image').slideDown(2000).delay(1000).fadeIn(2000);
+  }) 
+
 </script>
 
 <div class="hint">
