@@ -83,6 +83,26 @@
   "use strict";
 
   // code here for the above problem
+  let numsRequested = document.querySelector('#multiplying-form');
+
+  numsRequested.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    // Grabs value from drop down
+    const multisOf = parseInt(document.querySelector("#mults-of").value);
+    // Grabs value from max input 
+    let max = parseInt(document.querySelector("#max").value);
+    // Creates an empty array where multiples will be added, if applicable
+    let multiples = []
+    // Sets variale from drop down to next multiple
+    let nextMulti = multisOf
+
+    while (nextMulti <= max) {
+      multiples.push(nextMulti);
+      nextMulti = nextMulti + multisOf
+    }
+    console.log(multiples);
+  });
 
 </script>
 
