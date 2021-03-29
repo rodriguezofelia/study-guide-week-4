@@ -177,7 +177,6 @@
 
 <script>
   "use strict";
-  // put your code here
 
   $('#make-a-porcupine').on('click', (event) => {
     $('#cute-porcupine-image').slideDown(2000).delay(1000).fadeIn(2000);
@@ -214,6 +213,20 @@
 <script>
   "use strict";
   // put your code here
+
+  function favFood(event) {
+    // Prevents form from submitted/redirecting
+    event.preventDefault();
+
+    // Grabs value of input (eg. fav food)
+    let foodInput = $('#favorite-food-input').val();
+    // Updates html for div with favorite food
+    $('#agreeable-text').html(`I like ${foodInput} too!'`); 
+  }
+
+  // On submit, run favFood function
+  $('#agreeable-form').on('submit', favFood);
+
 </script>
 
 <div class="hint">
