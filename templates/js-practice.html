@@ -212,7 +212,6 @@
 
 <script>
   "use strict";
-  // put your code here
 
   function favFood(event) {
     // Prevents form from submitted/redirecting
@@ -266,6 +265,37 @@
     var PRIME_COLORS = ['orange', 'midnightblue', 'darkgoldenrod', 'green', 'purple'];
 
   // put the rest of your code here
+
+  function isPrime(num){
+
+    for (let i = 2; i < num; i++){
+      if (num % i === 0) {
+        // Number isn't prime
+        return false; 
+      }
+    }
+    // Number is prime
+    return true;
+  }
+
+  function makePrime(event) {
+    let num = 2;
+    let numFound = 0;
+
+    // Select div 
+    $('#prime-circle-area').html('');
+
+    while (numFound < 5){
+      // If num is Prime, add respective class, style and number to circle
+      if (isPrime(num)){
+        $('#prime-circle-area').append(`<div class="prime-circle" style="background-color: ${PRIME_COLORS[numFound]}">${num}</div>`);
+        numFound += 1;
+      }
+      num += 1;
+    }
+  }
+
+  $('#make-prime-circles').on('click', makePrime);
 </script>
 
 
