@@ -344,6 +344,23 @@
 
   // put your code here
 
+  $('#puppy-form').submit(function(event) {
+    // prevents page from reloading by the form trigger
+    event.preventDefault();
+
+    // gets number of puppies from dropdown 
+    let numPuppies = $('#num-puppies').val();
+    // puts number of puppies into an object
+    let puppyData = {
+      "num-puppies": numPuppies
+    };
+
+    // makes ajax request
+    $.get("/puppies.json", puppyData, showPuppies);
+  });
+
+
+
 </script>
 
 <div class="hint">
